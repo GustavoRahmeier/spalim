@@ -1372,3 +1372,47 @@
   .perks div+div { border-left: 0; border-top: 1px solid var(--line); }
   .grid { gap: 18px 10px; }
 }
+
+/* ===== COMO COMPRAR: correções ===== */
+
+/* bolinhas com a mesma cor do fundo da seção */
+#como .steps li::before { background: var(--soft); }
+
+/* aviso com caixa visível */
+#como .note {
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 699px) {
+  /* linha do tempo vertical */
+  #como .steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 16px; /* espaço para a bolinha não vazar da tela */
+  }
+  #como .steps li {
+    border-top: 0;
+    border-left: 1px solid var(--ink);
+    padding: 0 0 32px 28px;
+  }
+  #como .steps li:last-child {
+    padding-bottom: 0;
+    border-left-color: transparent; /* a linha termina na última bolinha */
+  }
+  #como .steps li::before {
+    top: -2px;
+    left: -16px;
+    width: 32px;
+    height: 32px;
+  }
+  #como .steps b {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  #como .note {
+    margin-top: 36px;
+    padding: 16px 18px;
+    font-size: .88rem;
+  }
+}
