@@ -1248,3 +1248,127 @@
       font-size: .85rem;
       line-height: 1
     }
+
+    /* ===== AJUSTES MOBILE ===== */
+@media (max-width: 699px) {
+  html { overflow-x: clip; }
+
+  /* barra do topo */
+  .top { font-size: .72rem; }
+  .top .wrap { justify-content: center; gap: 14px; }
+  .top span { white-space: nowrap; }
+
+  /* cabeçalho: logo + carrinho em cima, busca embaixo */
+  .bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px 12px;
+    padding: 10px 0 4px;
+  }
+  .bar .logo { height: 34px; }
+  .search {
+    grid-column: 1 / -1;
+    order: 3;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+  }
+  .search input { font-size: 16px; padding: 10px 16px; } /* evita zoom no iPhone */
+  nav { padding: 2px 0 10px; gap: 18px; }
+
+  /* hero */
+  .hero { padding: 28px 0 40px; gap: 32px; }
+  .hero::before { right: -30%; width: 90%; }
+  h1 { font-size: clamp(3rem, 15vw, 4.2rem); max-width: 9ch; }
+  .hero p { font-size: 1.02rem; margin: 18px 0 26px; max-width: none; }
+  .hero .btn { display: flex; width: 100%; }
+  .hero .btn + .btn,
+  .btn.ghost { margin-left: 0; margin-top: 10px; }
+  .win { max-width: 300px; }
+
+  /* categorias */
+  .cats { gap: 12px; }
+  .cat { min-height: 170px; padding: 22px; }
+  .cat h2 { font-size: 2.2rem; }
+  .cat::after { right: 22px; top: 20px; }
+
+  /* perks: 2 colunas certinhas */
+  .perks { grid-template-columns: 1fr 1fr; }
+  .perks div { padding: 18px 14px; font-size: .8rem; }
+  .perks b { font-size: .9rem; }
+  .perks div+div { border-left: 1px solid var(--line); }
+  .perks div:nth-child(odd) { border-left: 0; }
+  .perks div:nth-child(n+3) { border-top: 1px solid var(--line); }
+
+  /* seções */
+  section { padding: 48px 0; }
+  .head { gap: 14px; margin-bottom: 22px; }
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: calc(100% + 18px);
+    padding-right: 18px;
+    scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { white-space: nowrap; flex: none; }
+
+  /* grade de produtos: 2 por linha */
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; }
+  .tile svg { width: 70%; }
+  .tag { left: 8px; top: 8px; font-size: .66rem; padding: 3px 8px; }
+  .dots { left: 8px; bottom: 8px; }
+  .dots i { width: 10px; height: 10px; }
+  .card h3 { font-size: .84rem; }
+  .card p { font-size: .84rem; }
+
+  /* como comprar */
+  #como .t { margin-bottom: 40px !important; }
+  .steps { gap: 34px; }
+  .steps li { padding-right: 0; }
+  .note { margin-top: 32px; padding: 16px 18px; }
+
+  /* instagram + rodapé */
+  .insta .btn { width: 100%; justify-self: stretch; }
+  footer { padding: 36px 0 32px; }
+  footer .wrap { flex-direction: column; gap: 22px; }
+
+  /* janela da peça: sobe de baixo como "bottom sheet" */
+  #pm {
+    width: 100vw;
+    max-width: 100vw;
+    margin: auto 0 0;
+    border-radius: 16px 16px 0 0;
+    max-height: 94dvh;
+  }
+  .pgrid .tile { aspect-ratio: 1 / 1; max-height: 42dvh; width: 100%; }
+  .pinfo { padding: 22px 18px calc(24px + env(safe-area-inset-bottom, 0px)); gap: 16px; }
+  .pinfo h2 { font-size: 2rem; }
+  .thumbs { padding: 10px 12px; flex-wrap: nowrap; overflow-x: auto; }
+  .thumbs button { flex: none; }
+  .sz { min-width: 44px; padding: 11px 12px; }
+  .sw { width: 38px; height: 38px; }
+  .x { right: 10px; top: 10px; }
+
+  /* carrinho */
+  #cd, #ad { width: 100vw; }
+  #cd header { padding: 16px 18px; }
+  .items { padding: 0 18px; }
+  .it { grid-template-columns: 56px 1fr auto; gap: 10px; }
+  .foot { padding: 16px 18px calc(18px + env(safe-area-inset-bottom, 0px)); }
+
+  /* área da loja (admin) */
+  .ain { padding: 24px 16px 32px; }
+  .row2 { grid-template-columns: 1fr; }
+  .fld input, .fld select, .cr input[type=text] { font-size: 16px; }
+  .ar { grid-template-columns: 48px 1fr; }
+  .ar > :last-child { grid-column: 1 / -1; }
+  .atools .btn { flex: 1 1 100%; }
+}
+
+/* telas bem pequenas (iPhone SE etc.) */
+@media (max-width: 380px) {
+  .perks { grid-template-columns: 1fr; }
+  .perks div+div { border-left: 0; border-top: 1px solid var(--line); }
+  .grid { gap: 18px 10px; }
+}
