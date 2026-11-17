@@ -1416,3 +1416,16 @@
     font-size: .88rem;
   }
 }
+
+/* ===== FOTO DA PEÇA: sem zoom no celular ===== */
+@media (max-width: 699px) {
+  /* janela da peça: mostra a foto inteira */
+  .pgrid .tile {
+    aspect-ratio: 4 / 5;
+    max-height: 52dvh;
+  }
+  .pgrid .tile img { object-fit: contain; }
+
+  /* cartões da grade: foto inteira, sem corte */
+  .card .tile img { object-fit: contain; }
+}
